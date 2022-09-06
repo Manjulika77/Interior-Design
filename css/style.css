@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@500;700&display=swap');
+
+:root {
+  --color-gray: #283347;
+
+  --font-roboto: Roboto, sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #103651;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  background-image: url('../assets/retro-living-room-interior-design.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 128vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.img-logo {
+  width: 70%;
+}
+.mobile-nav{
+  display: none;
+}
+.nav-items {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #ffffff;
+  color: #fcf8f3;
+  padding: 1rem;
+  gap: 5.2rem; 
+}
+
+.nav-item {
+  cursor: pointer;
+  font-family: var(--font-roboto);
+  font-size: 1.2rem;
+  font-weight: bold;
+  list-style-type: none;
+
+  transition: all 0.3s ease;
+}
+
+.nav-item:not(:last-child):hover {
+  color: var(--color-gray);
+}
+
+.navbar-icon {
+  width: 2.5rem;
+}
+
+.contact-section {
+  display: flex;
+  align-items: center;
+}
+
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  font-family: var(--font-roboto);
+  margin-top: 10rem;
+}
+
+.home_heading {
+  color: #fcf8f3;
+  font-size: 3.5rem;
+  max-width: 500px;
+}
+
+.home_btn {
+  background-color: transparent;
+  border: 3px solid var(--color-gray);
+  border-radius: 100px;
+  color: #fcf8f3;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  outline: none;
+  padding: 1rem 3rem;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.home_btn:hover {
+  background-color: var(--color-gray);
+  color: #fff;
+}
+
+.home_heading::selection {
+  background-color: var(--color-gray);
+}
+
+.popups_1 {
+  background-color: rgba(205, 205, 205, 0.3);
+  border-radius: 8px;
+  font-family: var(--font-roboto);
+  font-size: 18px;
+  padding: 15px;
+  position: absolute;
+  top: 192px;
+  right: 107px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popups_1 img {
+  width: 100px;
+}
+
+.popups_1_line, .popups_2_line {
+  display: block;
+  background-color: #495067;
+  position: absolute;
+  margin-top: 49%;
+  margin-left: 60%;
+  height: 70px;
+  width: 3px;
+}
+
+.popups_1_circle, .popups_2_circle {
+  display: block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 70%;
+  margin-left: 57%;
+  height: 20px;
+  width: 20px;
+}
+
+.popups_1-text {
+  color: #fcf8f3;
+  font-weight: bold;
+  margin-top: 1rem;
+  max-width: 15rem;
+}
+
+.popups_2 {
+  background-color: rgba(205, 205, 205, 0.3);
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: var(--font-roboto);
+  padding: 15px;
+  position: absolute;
+  top: 30rem;
+  right: 30rem;
+}
+
+.popups_2_line {
+  transform: rotate(90deg);
+  margin-top: 2.1%;
+  margin-left: 67%;
+}
+
+.popups_2_circle {
+  margin-top: 4%;
+  margin-left: 69.1%;
+}
+
+.popups_2-text {
+  color: #fcf8f3;
+  font-weight: bold;
+  margin-top: 1rem;
+  max-width: 15rem;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1350px) {
+  .popups_1_line, .popups_2_line, .popups_1_circle, .popups_2_circle  {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo {
+    padding: 2rem 0.5rem;
+  }
+  .mobile-nav{
+    display: block;
+  }
+  .nav-items, .popups_1_line, .popups_2_line, .popups_1_circle, .popups_2_circle  {
+    display: none;
+  }
+  .home{
+    text-align: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home_btn {
+    background-color: rgba(205, 205, 205, 0.4);
+    border: 3px solid var(--color-gray);
+    color: #fcf8f3;
+  }
+  .popups{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+  }
+  .popups_1 {
+    position: relative;
+    top:auto;
+    right: auto;
+  }
+
+  .popups_2 {
+    position: relative;
+    top:auto;
+    right: auto;
+  }
+}
